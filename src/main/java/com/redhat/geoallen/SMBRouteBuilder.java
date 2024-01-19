@@ -19,10 +19,9 @@ public class SMBRouteBuilder extends RouteBuilder {
      * Let's configure the Camel routing rules using Java code...
      */
     public void configure() {
-
-        //from("smb://geoallen-mac.attlocal.net?username=geoallen&path=/smb-share")
-        from("smb://ZENGACLOUD/smb-user")
-        //from("smb:%s/%s?username=%s&password=%s&path=/")
+       
+        // update smb.uri in application.properties
+        from("{{smb.uri}}")
             .step().setBody(constant("Successfully connected to SMB Server"))
             .process(this::process)
             //.to("mock:result")
@@ -31,10 +30,11 @@ public class SMBRouteBuilder extends RouteBuilder {
 
 
     private void process(Exchange exchange) throws IOException {
-    final File file = exchange.getMessage().getBody(File.class);
-    try (InputStream inputStream = file.getInputStream()) {
-        Log.info("Read exchange: {}, with contents: {}" + file.getFileInformation() + new String(inputStream.readAllBytes()));
-    }
+
+        final File file = exchange.getMessage().getBody(File.class);
+        try (InputStream inputStream = file.getInputStream()) {
+            Log.info("Read exchange: {}, with contents: {}" + file.getFileInformation() + new String(inputStream.readAllBytes()));
+        }
 }
 
 
