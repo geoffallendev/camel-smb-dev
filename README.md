@@ -50,3 +50,10 @@ If you want to learn more about building native executables, please consult http
 ## Related Guides
 
 - Camel Core ([guide](https://camel.apache.org/camel-quarkus/latest/reference/extensions/core.html)): Camel core functionality and basic Camel languages: Constant, ExchangeProperty, Header, Ref, Simple and Tokenize
+
+
+2024-01-18 13:56:55,482 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 4.2.0 (camel-1) is shutting down
+2024-01-18 13:56:55,485 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Routes stopped (stopped:1)
+2024-01-18 13:56:55,486 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread)     Stopped route1 (smb://geoallen-mac.attlocal.net/smb-share)
+2024-01-18 13:56:55,487 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 4.2.0 (camel-1) shutdown in 5ms (uptime:26s)
+2024-01-18 13:56:55,492 INFO  [io.quarkus] (Quarkus Main Thread) camel-smb-demo stopped in 0.011s

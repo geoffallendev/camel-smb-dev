@@ -21,7 +21,7 @@ public class SMBRouteBuilder extends RouteBuilder {
     public void configure() {
 
         //from("smb://geoallen-mac.attlocal.net?username=geoallen&path=/smb-share")
-        from("smb://geoallen-mac.attlocal.net/smb-share?password=xxxxx&username=geoallen")
+        from("smb://ZENGACLOUD/smb-user")
         //from("smb:%s/%s?username=%s&password=%s&path=/")
             .step().setBody(constant("Successfully connected to SMB Server"))
             .process(this::process)
