@@ -4,6 +4,10 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## Getting Started
+
+https://quarkus.io/get-started/
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -53,6 +57,27 @@ If you want to learn more about building native executables, please consult http
 
 
 - Quarkus Config - https://quarkus.io/guides/config-reference
+
+## Goals
+    1. Establish Java/Quarkus Development Environment
+
+    2.  Configuration Example for Pre-Release versions Camel-SMB Component 
+        1. Properly Configured with Community Versions of Quarkus and Camel
+        2. Quarkus 3.6.6
+        3. Camel 4.3
+        4. Camel-SMB 4.3
+
+    3. Demostrate Quarkus Dev Mode and Application Properties
+
+    4. Collaborate on connectivity to SMB Share - Update URL
+
+    5. Build Executable Jar
+
+    6. Build Container 
+    
+
+
+
 
 
 
