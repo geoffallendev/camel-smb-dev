@@ -10,34 +10,22 @@ import com.hierynomus.smbj.share.File;
 
 import io.quarkus.logging.Log;
 
-/**
- * A Camel Java DSL Router
- */
 public class SMBRouteBuilder extends RouteBuilder {
 
-    /**
-     * Let's configure the Camel routing rules using Java code...
-     */
-    public void configure() {
-       
-        // update smb.uri in application.properties
-        from("{{smb.uri}}")
-            .step().setBody(constant("Successfully connected to SMB Server"))
-            .process(this::process)
-            //.to("mock:result")
-            .log("Connected to SMB: ${body}");
+  @Override
+  public void configure() {
+
+    from("smb://{{smb.host}}:{{smb.port:445}}/{{smb.share}}?username={{smb.username}}&password=RAW({{smb.password}})&delay=5000")
+      .log("Processing file [${body}]")
+      .process(this::process)
+    ;
+  }
+
+  private void process(Exchange exchange) throws IOException {
+
+    final File file = exchange.getMessage().getBody(File.class);
+    try (InputStream inputStream = file.getInputStream()) {
+      Log.info(String.format("Read exchange: [%s], with contents: [%s]", file.getFileName(), new String(inputStream.readAllBytes())));
     }
-
-
-    private void process(Exchange exchange) throws IOException {
-
-        final File file = exchange.getMessage().getBody(File.class);
-        try (InputStream inputStream = file.getInputStream()) {
-            Log.info("Read exchange: {}, with contents: {}" + file.getFileInformation() + new String(inputStream.readAllBytes()));
-        }
-}
-
-
-  
-
+  }
 }
