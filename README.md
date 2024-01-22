@@ -58,49 +58,5 @@ If you want to learn more about building native executables, please consult http
 
 - Quarkus Config - https://quarkus.io/guides/config-reference
 
-## Goals
-    1. Establish Java/Quarkus Development Environment
-
-    2.  Configuration Example for Pre-Release versions Camel-SMB Component 
-        1. Properly Configured with Community Versions of Quarkus and Camel
-        2. Quarkus 3.6.6
-        3. Camel 4.3
-        4. Camel-SMB 4.3
-
-    3. Demostrate Quarkus Dev Mode and Application Properties
-
-    4. Collaborate on connectivity to SMB Share - Update URL
-
-    5. Build Executable Jar
-
-    6. Build Container 
-    
 
 
-
-
-
-
-## Current Exception
-
-2024-01-19 17:34:14,055 WARN  [org.apa.cam.com.smb.SmbConsumer] (Camel (camel-1) thread #1 - smb://ZENGACLOUD/smb-user) Failed polling endpoint: smb://ZENGACLOUD/smb-user. Will try again at next poll. Caused by: [java.net.BindException - Can't assign requested address]: java.net.BindException: Can't assign requested address
-        at java.base/sun.nio.ch.Net.connect0(Native Method)
-        at java.base/sun.nio.ch.Net.connect(Net.java:579)
-        at java.base/sun.nio.ch.Net.connect(Net.java:568)
-        at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
-        at java.base/java.net.Socket.connect(Socket.java:633)
-        at com.hierynomus.protocol.commons.socket.ProxySocketFactory.createSocket(ProxySocketFactory.java:87)
-        at com.hierynomus.protocol.commons.socket.ProxySocketFactory.createSocket(ProxySocketFactory.java:63)
-        at com.hierynomus.smbj.transport.tcp.direct.DirectTcpTransport.connect(DirectTcpTransport.java:95)
-        at com.hierynomus.smbj.connection.Connection.connect(Connection.java:139)
-        at com.hierynomus.smbj.SMBClient.getEstablishedOrConnect(SMBClient.java:96)
-        at com.hierynomus.smbj.SMBClient.connect(SMBClient.java:83)
-        at org.apache.camel.component.smb.SmbConsumer.poll(SmbConsumer.java:48)
-        at org.apache.camel.support.ScheduledPollConsumer.doRun(ScheduledPollConsumer.java:203)
-        at org.apache.camel.support.ScheduledPollConsumer.run(ScheduledPollConsumer.java:117)
-        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-        at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
-        at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
-        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-        at java.base/java.lang.Thread.run(Thread.java:833)
